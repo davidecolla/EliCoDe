@@ -14,7 +14,9 @@ NB. It requires [Anaconda](https://www.anaconda.com/distribution/)
 #### 2 - Download pre-trained models and fine-tuned models
 Download models from ["Google Drive"](https://drive.google.com/drive/folders/1K2EzW57ieyISyIY1dVfiM2JQf0dTXfZU?usp=sharing) and unpack the archive in the data folder. The shared task data can be downloaded from the [MultiGED-2023 official repository](https://github.com/spraakbanken/multiged-2023).
 An example of a data folder structure might look like the following:
+
 ![Data folder example](img/data_example.png)
+
 where the data folder contain two sub-directories:
 - `input` containing a folder for each language e.g. `it` for Italian where train/test/dev original files can be stored;
 - `output` containing a folder for each language e.g. `it` for Italian where model and predictions can be stored;

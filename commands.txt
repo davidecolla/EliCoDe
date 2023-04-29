@@ -1,0 +1,47 @@
+# 1. Convert tsv to bio
+python convert_tsv_to_bio.py --language_folder ../../data/input/it/ --output_folder ../../data/output/it/ --output_folder_all ../../data/output_all/it/
+
+ # 2. Train
+ python src/run_roberta_token_classification.py \
+ --model_type xlm-roberta \
+ --pretrained_model xlm-roberta-large \
+ --data_dir ./data/output/it/ \
+ --new_model_dir ./data/output/it/roberta_model/ \
+ --overwrite_model_dir \
+ --max_seq_length 512 \
+ --save_model_core \
+ --do_train \
+ --model_selection_scoring strict-f_score-1 \
+ --train_batch_size 4 \
+ --eval_batch_size 4 \
+ --train_steps -1 \
+ --learning_rate 1e-5 \
+ --num_train_epochs 10 \
+ --gradient_accumulation_steps 1 \
+ --do_warmup \
+ --seed 13 \
+ --warmup_ratio 0.1 \
+ --max_num_checkpoints 3 \
+ --log_file ./data/output/it/log_roberta_train.txt \
+ --progress_bar \
+ --early_stop 5; 
+ 
+ # 3. Test
+ python src/run_roberta_token_classification.py \
+  --model_type xlm-roberta \
+  --pretrained_model ./data/output/it/roberta_model/ \
+  --data_dir ./data/output/it/ \
+  --do_predict \
+  --predict_output_file ./data/output/it/roberta_preds.txt \
+  --max_seq_length 512 \
+  --model_selection_scoring strict-f_score-1 \
+  --seed 13 \
+  --log_file ./data/output/it/log_roberta_test.txt \
+  --progress_bar\
+  --new_model_dir ./data/output/it/roberta_model/;
+
+# 4. Convert bio to tsv
+python convert_bio_to_tsv.py --bio_file ../../data/output/it/roberta_preds.txt --tsv_file ../../data/input/it/test.tsv --output_file ../../data/output/it/it_preds.txt
+
+# 5. Baseline
+python multiged_baseline.py --language_folder ../../data/input/it/ --output_folder ../../data/output/it/

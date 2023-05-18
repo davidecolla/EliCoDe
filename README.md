@@ -1,7 +1,7 @@
 ## Overview
 This repository contains the source code and the models used for [Shared task on Multilingual Grammatical Error Detection (MultiGED-2023)](https://github.com/spraakbanken/multiged-2023).
 The model is described in the paper 
-[EliCoDe at MultiGED2023: fine-tuning XLM-RoBERTa for multilingual grammatical error detection](paper_link).
+[EliCoDe at MultiGED2023: fine-tuning XLM-RoBERTa for multilingual grammatical error detection](https://ecp.ep.liu.se/index.php/sltc/article/view/679/585).
 This repository was built based on the code from the repository [Clinical Transformer NER](https://github.com/uf-hobi-informatics-lab/ClinicalTransformerNER). We have extended the framework by allowing the use of the XLM-RoBERTa model; we release the code to use such model only. If you are interested in exploiting other models please refer to the original repository.
 
 ## Prerequisites

@@ -139,6 +139,7 @@ Citation:
   volume={197},
   pages={24--34},
   year={2023},
-  organization={Link{\"o}ping University Electronic Press}
+  organization={Link{\"o}ping University Electronic Press},
+  doi = {10.3384/ecp197003}
 }
 ```

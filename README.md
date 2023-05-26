@@ -132,6 +132,13 @@ python multiged_baseline.py \
 ## Reference
 Citation:
 ```
-@InProceedings{
+@inproceedings{colla2023elicode,
+  title={ELICODE at MultiGED2023: fine-tuning XLM-RoBERTa for multilingual grammatical error detection},
+  author={Colla, Davide and Delsanto, Matteo and Di Nuovo, Elisa and others},
+  booktitle={LINK{\"O}PING ELECTRONIC CONFERENCE PROCEEDINGS},
+  volume={197},
+  pages={24--34},
+  year={2023},
+  organization={Link{\"o}ping University Electronic Press}
 }
 ```
